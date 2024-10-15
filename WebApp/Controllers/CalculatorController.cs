@@ -19,7 +19,7 @@ namespace WebApp.Controllers
                     ViewBag.Result = x+y;
                     break;
                 case "-":
-                    ViewBag.Result = x-y;
+                    ViewBag.Result = x-y ;
                     break;
                 case "*":
                     ViewBag.Result = x*y;
