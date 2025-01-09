@@ -1,54 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
+using WebApp.Models.Services;
 
 namespace WebApp.Controllers
 {
     public class ContactController : Controller
     {
-        private static Dictionary<int, ContactModel> _contacts = new()
+        private readonly IContactService _contactService;
+
+        public ContactController(IContactService contactService)
         {
-            {
-                1,
-                new ContactModel ()
-                {
-                    Id = 1,
-                    FirstName = "Foo",
-                    LastName = "Bar",
-                    Email = "foobar@gmail.com",
-                    PhoneNumber = "123 456 789",
-                    BirthDate = new DateOnly(2003, 10, 10)
-                }
-            },
-            {
-                2,
-                new ContactModel ()
-                {
-                    Id = 2,
-                    FirstName = "Adam",
-                    LastName = "Nowicki",
-                    Email = "nowicki@gmail.com",
-                    PhoneNumber = "111 222 333",
-                    BirthDate = new DateOnly(2000, 02, 11)
-                }
-            },
-            {
-                3,
-                new ContactModel ()
-                {
-                    Id = 3,
-                    FirstName = "Lukasz",
-                    LastName = "Niewiadomy",
-                    Email = "lukasz123@gmail.com",
-                    PhoneNumber = "101 252 233",
-                    BirthDate = new DateOnly(1998, 06, 01)
-                }
-            }
-        };
+            _contactService = contactService;
+        }
         
         // GET: ContactController
         public ActionResult Index()
         {
-            return View(_contacts);
+            return View(_contactService.FindAll());
         }
         
         
@@ -62,10 +30,7 @@ namespace WebApp.Controllers
         public IActionResult Add(ContactModel model) { 
             if (ModelState.IsValid)
             {
-                int id = _contacts.Keys.Count != 0 ? _contacts.Keys.Max() : 0;
-                model.Id = id + 1;
-                _contacts.Add(model.Id, model);
-
+                _contactService.Add(model);
                 return RedirectToAction("Index");
             } else
             {
@@ -75,14 +40,14 @@ namespace WebApp.Controllers
         
         public IActionResult Delete(int id)
         {
-            _contacts.Remove(id);
+            _contactService.Delete(id);
 
             return RedirectToAction("Index");
         }
         
         public IActionResult Edit(int id)
         {
-            return View(_contacts[id]);
+            return View(_contactService.FindById(id));
         }
         
         [HttpPost]
@@ -93,13 +58,13 @@ namespace WebApp.Controllers
                 return View(model);
             }
 
-            _contacts[model.Id] = model;
+            _contactService.Update(model);
             return RedirectToAction(nameof(System.Index));
         }
         
         public IActionResult Details(int id)
         {
-            return View(_contacts[id]);
+            return View(_contactService.FindById(id));
         }
 
 

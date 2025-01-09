@@ -1,4 +1,4 @@
-@model System.Collections.Generic.Dictionary<int, WebApp.Models.ContactModel>
+@model List<ContactModel>
 
 @{
     ViewBag.Title = "Contact Page";
@@ -11,17 +11,19 @@
 
 <a class="btn btn-primary" asp-action="Add" asp-controller="Contact">Add Contact</a>
 <h4>Contact List</h4>
+@if(Model.Count > 0)
+{
 <table class="table">
     <thead>
     <tr>
         <th>
-            Name
+            @Html.DisplayNameFor(l => l[0].FirstName)
         </th>
         <th>
-            Surname
+            @Html.DisplayNameFor(l => l[0].LastName)
         </th>
         <th>
-            Action
+            @Html.DisplayNameFor(l => l[0].Category)
         </th>
     </tr>
     </thead>
@@ -30,20 +32,27 @@
     {
         <tr>
             <td>
-                @entry.Value.FirstName
+                @entry.FirstName
             </td>
             <td>
-                @entry.Value.LastName
+                @entry.LastName
             </td>
             <td>
-                @entry.Value.Category
+                @entry.Category.GetDisplayName()
             </td>
             <td>
-                <a class="btn btn-success" asp-controller="Contact" asp-action="Edit" asp-route-id="@entry.Key">Edit</a> @* ???? *@
-                <a class="btn btn-info" asp-controller="Contact" asp-action="Details" asp-route-id="@entry.Key">Info</a>
-                <a class="btn btn-danger" asp-controller="Contact" asp-action="Delete" asp-route-id="@entry.Key">Delete</a>
+                <a class="btn btn-success" asp-controller="Contact" asp-action="Edit" asp-route-id="@entry.Id">Edit</a> @* ???? *@
+                <a class="btn btn-info" asp-controller="Contact" asp-action="Details" asp-route-id="@entry.Id">Info</a>
+                <a class="btn btn-danger" asp-controller="Contact" asp-action="Delete" asp-route-id="@entry.Id">Delete</a>
             </td>
         </tr>
     }
     </tbody>
 </table>
+}
+else
+{
+<h1 class="text-danger">
+    Nie masz jeszcze kontaktow
+</h1>
+}
