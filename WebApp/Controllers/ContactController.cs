@@ -82,16 +82,24 @@ namespace WebApp.Controllers
         
         public IActionResult Edit(int id)
         {
-            _contacts.Remove(id);
-
-            return RedirectToAction("Index");
+            return View(_contacts[id]);
         }
         
-        public IActionResult Info(int id)
+        [HttpPost]
+        public IActionResult Edit(ContactModel model)
         {
-            _contacts.Remove(id);
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-            return RedirectToAction("Index");
+            _contacts[model.Id] = model;
+            return RedirectToAction(nameof(System.Index));
+        }
+        
+        public IActionResult Details(int id)
+        {
+            return View(_contacts[id]);
         }
 
 
