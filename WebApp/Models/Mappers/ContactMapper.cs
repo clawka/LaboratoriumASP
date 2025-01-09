@@ -15,6 +15,9 @@ public class ContactMapper
             PhoneNumber = arg.PhoneNumber,
             Email = arg.Email,
             Category = arg.Category,
+            
+            Organization = arg.Organization,
+            OrganizationId = arg.OrganizationId
         };
     }
     public static ContactModel FromEntity(ContactEntity arg)
@@ -28,6 +31,9 @@ public class ContactMapper
             PhoneNumber = arg.PhoneNumber,
             Email = arg.Email,
             Category = arg.Category,
+            
+            Organization = arg.Organization,
+            OrganizationId = arg.OrganizationId
         };
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp.Models;
 using WebApp.Models.Services;
 
@@ -23,11 +24,21 @@ namespace WebApp.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            
+            ContactModel model = new ContactModel();
+            model.Organizations =  _contactService
+                .FindAllOrganizations()
+                .Select(o => new SelectListItem() { Value = o.Id.ToString(), Text = o.Title })
+                .ToList();
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult Add(ContactModel model) { 
+            model.Organizations =  _contactService
+                .FindAllOrganizations()
+                .Select(o => new SelectListItem() { Value = o.Id.ToString(), Text = o.Title })
+                .ToList();
             if (ModelState.IsValid)
             {
                 _contactService.Add(model);
@@ -47,7 +58,12 @@ namespace WebApp.Controllers
         
         public IActionResult Edit(int id)
         {
-            return View(_contactService.FindById(id));
+            ContactModel model = _contactService.FindById(id);
+            model.Organizations =  _contactService
+                .FindAllOrganizations()
+                .Select(o => new SelectListItem() { Value = o.Id.ToString(), Text = o.Title })
+                .ToList();
+            return View(model);
         }
         
         [HttpPost]

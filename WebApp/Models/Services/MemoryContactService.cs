@@ -1,3 +1,5 @@
+using WebApp.Models.Entities;
+
 namespace WebApp.Models.Services;
 
 public class MemoryContactService : IContactService
@@ -70,5 +72,10 @@ public class MemoryContactService : IContactService
         {
             _contacts[model.Id] = model;
         }
+    }
+    
+    public List<OrganizationEntity> FindAllOrganizations()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -41,4 +41,9 @@ public class EFContactService : IContactService
         _context.Contacts.Update(ContactMapper.ToEntity(model));
         _context.SaveChanges();
     }
+    
+    public List<OrganizationEntity> FindAllOrganizations()
+    {
+        return _context.Organizations.ToList();
+    }
 }
