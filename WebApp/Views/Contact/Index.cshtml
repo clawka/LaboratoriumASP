@@ -36,6 +36,9 @@
                 @entry.Value.LastName
             </td>
             <td>
+                @entry.Value.Category
+            </td>
+            <td>
                 <a class="btn btn-success" asp-controller="Contact" asp-action="Edit" asp-route-id="@entry.Key">Edit</a> @* ???? *@
                 <a class="btn btn-info" asp-controller="Contact" asp-action="Details" asp-route-id="@entry.Key">Info</a>
                 <a class="btn btn-danger" asp-controller="Contact" asp-action="Delete" asp-route-id="@entry.Key">Delete</a>
