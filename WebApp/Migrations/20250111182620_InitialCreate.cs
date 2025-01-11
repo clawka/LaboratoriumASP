@@ -204,8 +204,8 @@ namespace WebApp.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "4a2c9f19-38e0-4f96-b947-fd47b30b93de", "4a2c9f19-38e0-4f96-b947-fd47b30b93de", "user", "USER" },
-                    { "9256acf6-e715-4ebc-a371-f69140eb8e53", "9256acf6-e715-4ebc-a371-f69140eb8e53", "admin", "ADMIN" }
+                    { "72be9905-9460-4a6a-b6aa-33f7b76816ce", "72be9905-9460-4a6a-b6aa-33f7b76816ce", "admin", "ADMIN" },
+                    { "e38056cb-8e5d-4e40-b299-9bb6556de94e", "e38056cb-8e5d-4e40-b299-9bb6556de94e", "user", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -213,8 +213,8 @@ namespace WebApp.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1425d504-1cc5-48f9-b304-ea0f1fce3254", 0, "33685344-795d-4b1e-ba55-f7fda1c7cfc9", "adam@wsei.edu.pl", true, false, null, "ADAM@WSEI.EDU.PL", "ADMIN", "AQAAAAIAAYagAAAAEDFhO+intJuM046ti3pylJS67dmuCkgRZnxCs4Y/wuckfCQS4QRPsfqyza57Sv7EJw==", null, false, "29e3c53e-4503-4746-8d95-3041c5e48e18", false, "adam" },
-                    { "417f3f06-4223-4316-9b7d-760ae761f83b", 0, "a9812425-4af8-4b55-aabd-13c1634d17f1", "karol@wsei.edu.pl", true, false, null, "KAROL@WSEI.EDU.PL", "KAROL", "AQAAAAIAAYagAAAAEM4zWmdk/cLnnFlsyu/XZpx1/yZQp3ZSBH/j9vx9XB/oCDjXOAZaEyuV75bj/Ss91Q==", null, false, "04da19fd-8c05-4331-8988-206933c2d116", false, "Karol" }
+                    { "510834d8-5ed1-4fdc-95e8-36815e58134b", 0, "032b7a53-a7b8-40e0-83c4-a8d6a02c077a", "adam@wsei.edu.pl", true, false, null, "ADAM@WSEI.EDU.PL", "ADAM", "AQAAAAIAAYagAAAAEPsSzJLsDaCQl/pGgG1xDJixXXqkM0lgs2hn0qK5/OuWg7Y4UuQ2tPypm/7SGiEq2A==", null, false, "386616e1-5081-434a-9552-3689510c1a35", false, "adam" },
+                    { "8427e22f-3092-42dd-8b9c-94ff22b0c2d9", 0, "89efec5b-c184-4cd1-8757-3a988e24dd28", "karol@wsei.edu.pl", true, false, null, "KAROL@WSEI.EDU.PL", "KAROL", "AQAAAAIAAYagAAAAEMFzl5WzhtwiDf53Www1dg0o82zzdS9ZyIIv3y7mHl30TjBUTwf0LQ63pDgCnfIx9A==", null, false, "51ade427-3d62-4b79-8335-a375ae6e165a", false, "Karol" }
                 });
 
             migrationBuilder.InsertData(
@@ -231,8 +231,8 @@ namespace WebApp.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "9256acf6-e715-4ebc-a371-f69140eb8e53", "1425d504-1cc5-48f9-b304-ea0f1fce3254" },
-                    { "4a2c9f19-38e0-4f96-b947-fd47b30b93de", "417f3f06-4223-4316-9b7d-760ae761f83b" }
+                    { "72be9905-9460-4a6a-b6aa-33f7b76816ce", "510834d8-5ed1-4fdc-95e8-36815e58134b" },
+                    { "e38056cb-8e5d-4e40-b299-9bb6556de94e", "8427e22f-3092-42dd-8b9c-94ff22b0c2d9" }
                 });
 
             migrationBuilder.InsertData(

@@ -11,7 +11,7 @@ using WebApp.Models;
 namespace WebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250111175210_InitialCreate")]
+    [Migration("20250111182620_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -48,15 +48,15 @@ namespace WebApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9256acf6-e715-4ebc-a371-f69140eb8e53",
-                            ConcurrencyStamp = "9256acf6-e715-4ebc-a371-f69140eb8e53",
+                            Id = "72be9905-9460-4a6a-b6aa-33f7b76816ce",
+                            ConcurrencyStamp = "72be9905-9460-4a6a-b6aa-33f7b76816ce",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "4a2c9f19-38e0-4f96-b947-fd47b30b93de",
-                            ConcurrencyStamp = "4a2c9f19-38e0-4f96-b947-fd47b30b93de",
+                            Id = "e38056cb-8e5d-4e40-b299-9bb6556de94e",
+                            ConcurrencyStamp = "e38056cb-8e5d-4e40-b299-9bb6556de94e",
                             Name = "user",
                             NormalizedName = "USER"
                         });
@@ -151,33 +151,33 @@ namespace WebApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1425d504-1cc5-48f9-b304-ea0f1fce3254",
+                            Id = "510834d8-5ed1-4fdc-95e8-36815e58134b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "33685344-795d-4b1e-ba55-f7fda1c7cfc9",
+                            ConcurrencyStamp = "032b7a53-a7b8-40e0-83c4-a8d6a02c077a",
                             Email = "adam@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADAM@WSEI.EDU.PL",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDFhO+intJuM046ti3pylJS67dmuCkgRZnxCs4Y/wuckfCQS4QRPsfqyza57Sv7EJw==",
+                            NormalizedUserName = "ADAM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPsSzJLsDaCQl/pGgG1xDJixXXqkM0lgs2hn0qK5/OuWg7Y4UuQ2tPypm/7SGiEq2A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "29e3c53e-4503-4746-8d95-3041c5e48e18",
+                            SecurityStamp = "386616e1-5081-434a-9552-3689510c1a35",
                             TwoFactorEnabled = false,
                             UserName = "adam"
                         },
                         new
                         {
-                            Id = "417f3f06-4223-4316-9b7d-760ae761f83b",
+                            Id = "8427e22f-3092-42dd-8b9c-94ff22b0c2d9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a9812425-4af8-4b55-aabd-13c1634d17f1",
+                            ConcurrencyStamp = "89efec5b-c184-4cd1-8757-3a988e24dd28",
                             Email = "karol@wsei.edu.pl",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "KAROL@WSEI.EDU.PL",
                             NormalizedUserName = "KAROL",
-                            PasswordHash = "AQAAAAIAAYagAAAAEM4zWmdk/cLnnFlsyu/XZpx1/yZQp3ZSBH/j9vx9XB/oCDjXOAZaEyuV75bj/Ss91Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMFzl5WzhtwiDf53Www1dg0o82zzdS9ZyIIv3y7mHl30TjBUTwf0LQ63pDgCnfIx9A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "04da19fd-8c05-4331-8988-206933c2d116",
+                            SecurityStamp = "51ade427-3d62-4b79-8335-a375ae6e165a",
                             TwoFactorEnabled = false,
                             UserName = "Karol"
                         });
@@ -245,13 +245,13 @@ namespace WebApp.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "1425d504-1cc5-48f9-b304-ea0f1fce3254",
-                            RoleId = "9256acf6-e715-4ebc-a371-f69140eb8e53"
+                            UserId = "510834d8-5ed1-4fdc-95e8-36815e58134b",
+                            RoleId = "72be9905-9460-4a6a-b6aa-33f7b76816ce"
                         },
                         new
                         {
-                            UserId = "417f3f06-4223-4316-9b7d-760ae761f83b",
-                            RoleId = "4a2c9f19-38e0-4f96-b947-fd47b30b93de"
+                            UserId = "8427e22f-3092-42dd-8b9c-94ff22b0c2d9",
+                            RoleId = "e38056cb-8e5d-4e40-b299-9bb6556de94e"
                         });
                 });
 

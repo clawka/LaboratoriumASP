@@ -51,10 +51,10 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
         {
             Id = ADMIN_ID,
             Email = "adam@wsei.edu.pl",
-            EmailConfirmed = true,
+            NormalizedEmail = "adam@wsei.edu.pl".ToUpper(),
             UserName = "adam",
-            NormalizedUserName = "ADMIN",
-            NormalizedEmail = "ADAM@WSEI.EDU.PL"
+            NormalizedUserName = "adam".ToUpper(),
+            EmailConfirmed = true,
         };
         
         var user = new IdentityUser()
@@ -70,7 +70,7 @@ public class AppDbContext : IdentityDbContext<IdentityUser>
 // haszowanie hasła, najlepiej wykonać to poza programem i zapisać gotowy
 // PasswordHash
         PasswordHasher<IdentityUser> ph = new PasswordHasher<IdentityUser>();
-        admin.PasswordHash = ph.HashPassword(admin, "1234!Abcd@");
+        admin.PasswordHash = ph.HashPassword(admin, "AbcD@1234!");
         user.PasswordHash = ph.HashPassword(user, "Abcd@1234!");
 
 // zapisanie użytkownika
