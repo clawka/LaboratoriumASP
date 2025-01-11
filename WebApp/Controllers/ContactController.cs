@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp.Models;
@@ -5,6 +6,7 @@ using WebApp.Models.Services;
 
 namespace WebApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;
@@ -15,6 +17,7 @@ namespace WebApp.Controllers
         }
         
         // GET: ContactController
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(_contactService.FindAll());
