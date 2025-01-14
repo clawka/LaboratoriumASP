@@ -13,8 +13,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+
     public IActionResult Index()
     {
+        ViewData["Visit"] = Response.HttpContext.Items[LastVisitCookie.CookieName];
         return View();
     }
 
